@@ -1,8 +1,8 @@
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Image, StyleSheet } from "react-native";  // Import StyleSheet
-import { AppRegistry } from 'react-native';  // Import AppRegistry
+import { Image, StyleSheet, View } from "react-native"; // Import StyleSheet
+import { AppRegistry } from "react-native"; // Import AppRegistry
 
 // Import screens
 import HomeScreen from "./screens/homeScreen";
@@ -16,8 +16,9 @@ function MyTabs() {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
+        tabBarIcon: ({ focused, color }) => {
           let iconPath;
+          let iconSize = 40; // Increased icon size
 
           switch (route.name) {
             case "Home":
@@ -45,18 +46,14 @@ function MyTabs() {
           return (
             <Image
               source={iconPath}
-              style={{ width: size, height: size, tintColor: color }}
+              style={{ width: iconSize, height: iconSize, tintColor: color }}
             />
           );
         },
         tabBarShowLabel: false,
-        tabBarStyle: styles.tabBar, 
+        tabBarStyle: styles.tabBar,
         headerShown: false,
       })}
-      tabBarOptions={{
-        activeTintColor: "blue",
-        inactiveTintColor: "gray",
-      }}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Order" component={OrderScreen} />
@@ -68,7 +65,8 @@ function MyTabs() {
 
 const styles = StyleSheet.create({
   tabBar: {
-    height: 70,  // Increase the height as needed
+    height: 80,
+    paddingBottom: 10,
   },
 });
 
@@ -81,4 +79,4 @@ export default function App() {
 }
 
 // Register the main component
-AppRegistry.registerComponent('main', () => App);
+AppRegistry.registerComponent("main", () => App);

@@ -13,12 +13,12 @@ import Swiper from "react-native-swiper";
 import { LinearGradient } from "expo-linear-gradient";
 
 // Import images as modules
-import profilePic from "../assets/profile-pic.png";
+import profilePic from "../assets/profilepic.png";
 import locationIcon from "../assets/location.png";
 import bellIcon from "../assets/bell-icon.png";
 import searchIcon from "../assets/search-icon.png";
 import searchSettings from "../assets/search-settings.png";
-import pizzaIcon from "../assets/pizza.png";
+import pizzaIcon from "../assets/pizzaicon.png";
 import burgerIcon from "../assets/burger.png";
 import drinksIcon from "../assets/drinks.png";
 import riceIcon from "../assets/rice.png";
@@ -159,8 +159,8 @@ const styles = StyleSheet.create({
     paddingBottom: 20, // Add some padding to create space
   },
   profilePic: {
-    width: 40,
-    height: 40,
+    width: 60,
+    height: 60,
     borderRadius: 20,
   },
   textContainer: {
@@ -186,8 +186,8 @@ const styles = StyleSheet.create({
     color: "#000",
   },
   notification: {
-    width: 40,
-    height: 40,
+    width: 60,
+    height: 60,
     borderRadius: 20,
     alignItems: "center",
     justifyContent: "center",
@@ -225,11 +225,11 @@ const styles = StyleSheet.create({
   menuItem: {
     alignItems: "center",
     marginRight: 20,
-    padding: 15,
+    padding: 30,
     backgroundColor: "white",
     borderRadius: 10,
-    width: 86, // Set width for square shape
-    height: 96, // Set height for square shape
+    width: 110, // Set width for square shape
+    height: 120, // Set height for square shape
   },
   menuIcon: {
     width: 35, // Adjust icon size if needed

@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     width: "100%",
     position: "relative",
-    paddingBottom: 20, // Add some padding to create space
+    paddingBottom: 20,
   },
   profilePic: {
     width: 60,
@@ -241,10 +241,10 @@ const styles = StyleSheet.create({
     color: "#000",
   },
   carouselContainer: {
-    width: "90%",
-    height: 150,
+    width: "98%",
+    height: 180,
     alignSelf: "center", // Center the carousel
-    marginTop: 60, // Reduce marginTop to decrease space
+    marginTop: 20, // Reduce marginTop to decrease space
   },
   carouselItem: {
     flex: 1,
@@ -265,19 +265,23 @@ const styles = StyleSheet.create({
   popularItemsHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginTop: 30,
+    marginTop: 20,
+    marginLeft: 20,
   },
   featuredItemsContainer: {
-    height: 180, // Increased height to accommodate image and text
+    height: 220, // Increased height to accommodate image and text
+    width: "100%",
+    alignContent: "center",
   },
   featuredItem: {
-    width: 200,
+    width: "80",
     height: 200, // Increased height to accommodate image and text
     justifyContent: "center", // Center the content vertically
     alignItems: "center",
     borderRadius: 10,
     overflow: "hidden",
     position: "relative",
+    paddingLeft: 30,
   },
   featuredImage: {
     width: 180,

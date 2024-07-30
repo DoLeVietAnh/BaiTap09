@@ -72,7 +72,8 @@ const HomeScreen = () => {
         <TextInput
           style={styles.searchInput}
           placeholder="Search your food"
-          placeholderTextColor="#999"
+          placeholderTextColor="#FFFFFF"
+          focusable={true}
         />
         <TouchableOpacity>
           <Image source={searchSettings} style={styles.settingsIcon} />
@@ -96,9 +97,10 @@ const HomeScreen = () => {
       <View style={styles.carouselContainer}>
         <Swiper
           style={styles.wrapper}
-          showsButtons={true}
+          showsButtons={false}
           autoplay
-          autoplayTimeout={3} // Time between slides
+          autoplayTimeout={3}
+          showsPagination={false}
         >
           {carouselItems.map((item, index) => (
             <View key={index} style={styles.carouselItem}>
@@ -110,7 +112,7 @@ const HomeScreen = () => {
 
       <View style={styles.popularItemsContainer}>
         <View style={styles.popularItemsHeader}>
-          <Text style={{ fontWeight: "bold", marginLeft: 10, fontSize: 20 }}>
+          <Text style={{ fontWeight: "bold", marginLeft: 5, fontSize: 20 }}>
             Popular items
           </Text>
           <Text style={{ marginRight: 10, fontSize: 18 }}>View all</Text>
@@ -121,13 +123,15 @@ const HomeScreen = () => {
           showsHorizontalScrollIndicator={false}
           style={styles.featuredItemsContainer}
         >
-          <View style={styles.featuredItem}>
-            <Image source={hotBurger} style={styles.featuredImage} />
-            <Text style={styles.featuredText}>BURGER</Text>
-          </View>
-          <View style={styles.featuredItem}>
-            <Image source={hotPizza} style={styles.featuredImage} />
-            <Text style={styles.featuredText}>PIZZA</Text>
+          <View style={styles.featuredImages}>
+            <View style={styles.featuredItem}>
+              <Image source={hotBurger} style={styles.featuredImage} />
+              <Text style={styles.featuredText}>BURGER</Text>
+            </View>
+            <View style={styles.featuredItem}>
+              <Image source={hotPizza} style={styles.featuredImage} />
+              <Text style={styles.featuredText}>PIZZA</Text>
+            </View>
           </View>
         </ScrollView>
       </View>
@@ -146,7 +150,7 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-    height: 200, // Adjust height as needed
+    height: 200,
     borderBottomRightRadius: 50,
     borderBottomLeftRadius: 50,
   },
@@ -161,7 +165,7 @@ const styles = StyleSheet.create({
   profilePic: {
     width: 60,
     height: 60,
-    borderRadius: 20,
+    borderRadius: 100,
   },
   textContainer: {
     flex: 1,
@@ -198,9 +202,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#4A43EC",
     borderRadius: 20,
     paddingHorizontal: 20,
-    marginTop: 30,
-    height: 70,
-    width: 350,
+    marginTop: "5%",
+    height: "10%",
+    width: "100%",
     alignSelf: "center",
   },
   searchIcon: {
@@ -211,6 +215,7 @@ const styles = StyleSheet.create({
   searchInput: {
     flex: 1,
     fontSize: 16,
+    color: "white",
   },
   settingsIcon: {
     width: 20,
@@ -218,22 +223,22 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   menuContainer: {
-    marginTop: 40,
+    marginTop: 20,
     paddingVertical: 10,
     paddingHorizontal: 5,
   },
   menuItem: {
     alignItems: "center",
     marginRight: 20,
-    padding: 30,
+    padding: 23,
     backgroundColor: "white",
     borderRadius: 10,
-    width: 110, // Set width for square shape
-    height: 120, // Set height for square shape
+    width: 100,
+    height: 120,
   },
   menuIcon: {
-    width: 35, // Adjust icon size if needed
-    height: 30, // Adjust icon size if needed
+    width: 40, // Adjust icon size if needed
+    height: 35, // Adjust icon size if needed
   },
   menuText: {
     marginTop: 5,
@@ -242,7 +247,7 @@ const styles = StyleSheet.create({
   },
   carouselContainer: {
     width: "98%",
-    height: 180,
+    height: 130,
     alignSelf: "center", // Center the carousel
     marginTop: 20, // Reduce marginTop to decrease space
   },
@@ -269,24 +274,32 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
   featuredItemsContainer: {
-    height: 220, // Increased height to accommodate image and text
+    height: "10%", // Increased height to accommodate image and text
     width: "100%",
     alignContent: "center",
+    paddingR: 20,
+  },
+  featuredImages: {
+    flexDirection: "row",
+    alignItems: "center",
+    paddingRight: 5,
+    paddingLeft: 13,
   },
   featuredItem: {
-    width: "80",
-    height: 200, // Increased height to accommodate image and text
-    justifyContent: "center", // Center the content vertically
+    width: 170,
+    height: 150,
+    justifyContent: "center",
     alignItems: "center",
     borderRadius: 10,
     overflow: "hidden",
     position: "relative",
-    paddingLeft: 30,
+    paddingLeft: 10,
+    marginLeft: 10,
   },
   featuredImage: {
     width: 180,
     height: 120, // Adjusted height for image
-    marginBottom: 10, // Space between image and text
+    marginBottom: "1%", // Space between image and text
   },
   featuredText: {
     fontSize: 16,

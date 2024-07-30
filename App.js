@@ -18,12 +18,14 @@ function MyTabs() {
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color }) => {
           let iconPath;
-          let iconSize = 40; // Increased icon size
+          let iconHeight = 40;
+          let iconWidth = 34;
+          let profileWidth = 46;
 
           switch (route.name) {
             case "Home":
               iconPath = focused
-                ? require("./assets/home-focused.png")
+                ? require("./assets/home.png")
                 : require("./assets/home.png");
               break;
             case "Order":
@@ -40,13 +42,14 @@ function MyTabs() {
               iconPath = focused
                 ? require("./assets/profile.png")
                 : require("./assets/profile.png");
+                iconWidth = profileWidth;
               break;
           }
 
           return (
             <Image
               source={iconPath}
-              style={{ width: iconSize, height: iconSize, tintColor: color }}
+              style={{ width: iconWidth, height: iconHeight, tintColor: color }}
             />
           );
         },
@@ -65,7 +68,7 @@ function MyTabs() {
 
 const styles = StyleSheet.create({
   tabBar: {
-    height: 80,
+    height: 70,
     paddingBottom: 10,
   },
 });
